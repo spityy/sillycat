@@ -21,19 +21,62 @@
         text-align: center;
     }
 
+    #btn {
+            background-color: #24beb7;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+    #btn:hover {
+        background-color: #c0392b;
+    }
+
     h1 {
         color: white;
-        font-family: 'Courier New', Courier, monospace;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 </style>
 
 <body>
     <h1>spitxy website fr</h1>
-    <audio controls autoplay>
-        <source src="tp.ogg" type="audio/ogg">
-        Your browser does not support the audio element.
-    </audio>
+    <button id="btn">press for silly cats.... >:3</button>
+    <h1 id="displayText"></h1>
+    <h1 id="disText"></h1>
+    <h1 id="disEEEText"></h1>
+    <h1 id="fifhsduodfg"></h1>
 </body>
+
+<script>
+    var audio = new Audio("dj.mp3");
+    var hover = new Audio("blub.mp3");
+    var displayTextElement = document.getElementById('displayText');
+    var moood = document.getElementById('disText');
+    var fgjsffod = document.getElementById('disEEEText');
+    var guli = document.getElementById('fifhsduodfg');
+
+    document.getElementById('btn').addEventListener('click', function(){
+        audio.play();
+        displayTextElement.textContent = 'sussy mussy agent: ' + navigator.userAgent;
+        fetch('https://ipinfo.io/json')
+                .then(response => response.json())
+                .then(data => {
+                    if (moood) {
+                        moood.textContent = 'yo sussy ip!: ' + data.ip;
+                        fgjsffod.textContent = 'gyat sus organization: ' + data.org
+                        fifhsduodfg.textContent = '(never press on .xyz links fr) - papyrus'
+                    }
+                })
+                .catch(error => console.error('Error fetching IP address:', error));
+    });
+    document.getElementById('btn').addEventListener('mouseenter', function(){
+        hover.play();
+    });
+</script>
 
 
 </html>
